@@ -80,14 +80,30 @@ int alterar(struct No* end, int outro) {
     return 0;
 }
 
-int excluir_one(struct No *end) {
-	// Implementar excluir um único elemento
-	return 0;
+int excluir(struct No *end) {
+	struct No *aux;
+	struct No *del;
+	del= inicio;
+	aux= end;
+	
+	while(del->prox != aux)
+		del= del->prox;
+	
+	del->prox = aux->prox;
+	delete(aux);
 }
 
-int excluir_all() {
-	// Implementar excluir toda a lista
-	return 0;
+int excluirTudo() {
+	struct No *aux;
+	
+	while(inicio!=NULL){
+		aux= inicio;
+		
+		inicio= inicio->prox;
+		delete(aux);
+	}
+
+	delete(inicio);
 }
 
 int main() {
@@ -143,12 +159,36 @@ int main() {
                 alterar(pos, num);
                 printf("Alterado com sucesso!\n");
             }
-
             break;
+        
+        case 6:
+			printf("Informe um numero para excluir:");
+			scanf("%d*C",&num);
+			pos = buscar(num);
+			
+			if (pos==NULL)
+				printf("NAO achei!");
+			else{
+				excluir(pos);
+			}
+				
+			break;
+				
+		case 7:
+			if(inicio==NULL)
+				printf("Lista VAZIA!");
+			else{
+				excluirTudo();
+			}	
+			
+			break;
+			
+		default:
+			printf("Opcao invalida!");
+        	break;
         }
-        op = menu(); // Atualize a opção dentro do loop
+        op = menu(); 
     }
 
     return 0;
 }
-
