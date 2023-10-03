@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#define MENU "\n0-Encerrar\n1-Inserir Inicio\n2-Inserir Fim\n3-Listar\n4-Buscar\n5-Alterar\nOpcao:"
+#define MENU "\n0-Encerrar\n1-Inserir Inicio\n2-Inserir Fim\n3-Listar\n4-Buscar\n5-Alterar\n6-Excluir um elemento;\n7-Excluir TODAlista;\nOpcao: "
 
 struct No {
     int num;
