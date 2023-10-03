@@ -136,7 +136,7 @@ int main() {
 
             break;
         }
-        op = menu(); // Atualize a opção dentro do loop
+        op = menu(); 
     }
 
     return 0;
