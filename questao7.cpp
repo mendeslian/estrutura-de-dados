@@ -86,9 +86,10 @@ int excluir(struct No *end) {
 	del= inicio;
 	aux= end;
 	
-	while(del->prox != aux)
-		del= del->prox;
-	
+	while(del->prox != aux) {
+		del= del->prox;		
+	}
+
 	del->prox = aux->prox;
 	delete(aux);
 }
@@ -97,9 +98,9 @@ int excluirTudo() {
 	struct No *aux;
 	
 	while(inicio!=NULL){
-		aux= inicio;
+		aux = inicio;
 		
-		inicio= inicio->prox;
+		inicio = inicio->prox;
 		delete(aux);
 	}
 
